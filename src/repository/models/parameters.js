@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class SearchCriteriaParameter {
+}
+exports.SearchCriteriaParameter = SearchCriteriaParameter;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFyYW1ldGVycy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBhcmFtZXRlcnMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxNQUFhLHVCQUF1QjtDQUVuQztBQUZELDBEQUVDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNsYXNzIFNlYXJjaENyaXRlcmlhUGFyYW1ldGVyIHtcclxuICAgIGNyaXRlcmlhOiBzdHJpbmc7XHJcbn1cclxuIl19

@@ -1,0 +1,11 @@
+/node_modules
+/src/repositories/**/*.js
+/src/repositories/**/*.map
+/**/yarn.lock
+/coverage/
+/config/environments/
+/config/environments.js
+/playground/
+/yarn-error\.log
+/dist/
+

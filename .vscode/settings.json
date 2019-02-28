@@ -1,0 +1,13 @@
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "files.exclude": {
+        "node_modules": true,
+        "src/repository/**/*.js.map": true,
+        "src/repository/**/*.js": true,
+        "config/**/*.js.map": true,
+        "config/**/*.js": true,
+        "src/utils/**/*.js.map": true,
+        "src/utils/**/*.js": true,
+        "dist": true
+    }
+}
