@@ -1,5 +1,39 @@
 # API Test
 
+## Environment
+
+1. OS Ubuntu 18.04
+2. Docker 18.09.3
+3. Port 14801
+
+## Install
+
+1. To install this API, you must run this command in a shell console:
+
+```
+git clone https://github.com/dracornino/mnc.git
+cd mnc
+```
+
+2. You need Docker to run this API. If you have Docker installed already, you can go to step 3 if not you can use the following instructions to install Docker in an Ubuntu fresh environment, using a custom script that we created:
+
+```
+chmod a+x ./bin/install-docker-ubuntu-18.04.sh
+sudo sh ./bin/install-docker-ubuntu-18.04.sh
+```
+
+For any other Linux based distro you can refer to this link to know how to install Docker.
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+
+3. With Docker installed, you must build an run the image with the API environment; using the following custom scripts (You could check the scripts to add any extra configuration supported by the project Dockerfile or Docker):
+
+```
+chmod a+x ./bin/run-mnc-api.sh
+sudo sh ./bin/run-mnc-api.sh
+```
+
+4. To test if the deployment was successful you can run the following script in the opened console:
+
 ```
 curl -X POST \
   http://localhost:14801/graphql \
@@ -7,12 +41,25 @@ curl -X POST \
   -d '{
 	"query":"query($criteria:String!){search(criteria:$criteria){criteria,timestamp,totalRecords,resultSet{name,source,type,url}}}",
 	"variables":{
-		"criteria":"Lost"
+		"criteria":"The Island of Lost Dreams"
 	}
 }'
 ```
 
-# Schema Types
+The result must be:
+
+```
+{"data":{"search":{"criteria":"The Island of Lost Dreams","timestamp":1551460452,"totalRecords":3,"resultSet":[{"name":"The Island of Lost Dreams","source":"iTunes","type":"SONG","url":"https://itunes.apple.com/us/album/the-island-of-lost-dreams/611043863?i=611043936&uo=4"},{"name":"Island of Lost Dreams","source":"iTunes","type":"SONG","url":"https://itunes.apple.com/us/album/island-of-lost-dreams/334802976?i=334803089&uo=4"},{"name":"Spy Kids 2: The Island of Lost Dreams","source":"iTunes","type":"MOVIE","url":"https://itunes.apple.com/us/movie/spy-kids-2-the-island-of-lost-dreams/id432484383?uo=4"}]}}}
+```
+
+This API was designed using [GraphQL](https://graphql.org/)
+
+The current API has a GraphQL query that can be called via HTTP
+or via some [GraphQL Client](https://graphql.org/code/#graphql-clients)
+
+An easy way to test this API is by going to [this link](<http://localhost:14801/graphql?query=query(%24criteria%3AString!)%0A%7B%0A%20%20search(criteria%3A%20%24criteria)%20%7B%0A%20%20%20%20criteria%0A%20%20%20%20timestamp%0A%20%20%20%20totalRecords%0A%20%20%20%20resultSet%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20source%0A%20%20%20%20%20%20type%0A%20%20%20%20%20%20url%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&variables=%7B%0A%20%20%22criteria%22%3A%20%22The%20Island%20of%20Lost%20Dreams%22%0A%7D>) that has a query playground configured for you.
+
+# Reference Table
 
 <details>
   <summary><strong>Table of Contents</strong></summary>
