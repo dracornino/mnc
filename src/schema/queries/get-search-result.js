@@ -1,13 +1,14 @@
-import { GraphQLList, GraphQLNonNull, GraphQLString } from "graphql";
+import { GraphQLNonNull, GraphQLString } from "graphql";
 import searchResultType from "../types/search-result";
 
 const query = {
     type: searchResultType,
-    description: "Do your <strong> searches in one place</strong>",
+    description:
+        "This query allows you to search for songs and movies in iTunes, shows on TVMaze and people in CRC Industries ",
     args: {
         criteria: {
             type: new GraphQLNonNull(GraphQLString),
-            description: "Foo bar"
+            description: "The value you want to look for in different sources"
         }
     },
     resolve: (obj, args, { loaders }) => {

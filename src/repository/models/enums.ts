@@ -6,7 +6,7 @@ export enum MediaTypes {
 }
 
 export enum MediaSourceType {
-    ITunes = "ITUNES",
-    TVMaze = "TVMAZE",
-    CRCIndustries = "CRCIND"
+    ITunes = 0,
+    TVMaze = 1,
+    CRCIndustries = 2
 }
