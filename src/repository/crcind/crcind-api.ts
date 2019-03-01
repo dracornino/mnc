@@ -6,7 +6,7 @@ export class CRCIndustriesRepository {
         criteria: string
     ): Promise<Array<ResultSet>> {
         try {
-            const result: Array<any> = await new Promise(resolve => {
+            const result: any = await new Promise(resolve => {
                 const url =
                     "http://www.crcind.com/csp/samples/SOAP.Demo.cls?wsdl";
                 const args = { name: criteria };
@@ -17,8 +17,8 @@ export class CRCIndustriesRepository {
                     ) {
                         if (
                             result &&
-                            result.GetListByName &&
-                            result.PersonIdentification
+                            result.GetListByNameResult &&
+                            result.GetListByNameResult.PersonIdentification
                         ) {
                             resolve(
                                 result.GetListByNameResult.PersonIdentification.map(
@@ -27,7 +27,10 @@ export class CRCIndustriesRepository {
                                             name: persona.Name,
                                             source:
                                                 MediaSourceType.CRCIndustries,
-                                            type: MediaTypes.PERSONA
+                                            type: MediaTypes.PERSONA,
+                                            url: `http://www.crcind.com/csp/samples/SOAP.Demo.cls?soap_method=FindPerson&id=${
+                                                persona.ID
+                                            }`
                                         };
                                     }
                                 )

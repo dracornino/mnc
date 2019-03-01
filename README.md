@@ -1,3 +1,17 @@
+# API Test
+
+```
+curl -X POST \
+  http://localhost:14801/graphql \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"query":"query($criteria:String!){search(criteria:$criteria){criteria,timestamp,totalRecords,resultSet{name,source,type,url}}}",
+	"variables":{
+		"criteria":"Lost"
+	}
+}'
+```
+
 # Schema Types
 
 <details>
@@ -90,6 +104,15 @@ The source of the song, movie, show or persona found
 <td>
 
 Represents the type of data found
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>url</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+More info about item found
 
 </td>
 </tr>
@@ -242,5 +265,3 @@ The `Boolean` scalar type represents `true` or `false`.
 The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
 
 ### String
-
-The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.

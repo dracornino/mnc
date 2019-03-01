@@ -16,7 +16,8 @@ export class ITunesRepository {
                     return {
                         name: data.trackName,
                         source: MediaSourceType.ITunes,
-                        type
+                        type,
+                        url: data.trackViewUrl
                     };
                 });
             }

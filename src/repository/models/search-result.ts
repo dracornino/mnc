@@ -4,6 +4,7 @@ export class ResultSet {
     name: string;
     source: MediaSourceType;
     type: MediaTypes;
+    url: string;
 }
 
 export class SearchResult {

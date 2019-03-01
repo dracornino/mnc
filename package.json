@@ -1,11 +1,19 @@
 {
     "name": "mnc-api",
     "version": "1.0.0",
-    "description": "Centralizador de servicios de busqueda",
+    "description": "This is a Api test that integrates a simple search towards other search services such as iTunes, TVMaze and a webservice published by CRC Industries",
     "main": "index.js",
     "author": "Joel Delcompare (joel.delcompare@outlook.com)",
     "license": "MIT",
     "private": true,
+    "scripts": {
+        "start": "cross-env NODE_ENV=development babel-node src/lib/index.js",
+        "dev": "cross-env NODE_ENV=development nodemon --inspect --exec babel-node src/lib/index.js",
+        "mm": "cross-env NODE_ENV=development ./node_modules/.bin/mm",
+        "build": "cross-env NODE_ENV=production babel src/ -d dist",
+        "test": "cross-env NODE_ENV=unit jest --coverage --runInBand",
+        "test-watch": "cross-env-shell NODE_ENV=unit node.exe --inspect-brk=44611 node_modules/jest/bin/jest.js --runInBand --watch"
+    },
     "dependencies": {
         "body-parser": "1.18.2",
         "connect-flash": "0.1.1",

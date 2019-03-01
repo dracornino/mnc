@@ -1,25 +1,26 @@
+yarn run v1.12.3
+$ /home/dracornino/repositories/mnc-test/mnc/node_modules/.bin/graphql-markdown http://localhost:14801/graphql
 # Schema Types
 
 <details>
   <summary><strong>Table of Contents</strong></summary>
 
--   [Query](#query)
--   [Objects](#objects)
-    -   [ResultSet](#resultset)
-    -   [SearchResult](#searchresult)
--   [Enums](#enums)
-    -   [MediaSourceType](#mediasourcetype)
-    -   [MediaType](#mediatype)
--   [Scalars](#scalars)
-    -   [Boolean](#boolean)
-    -   [Int](#int)
-    -   [String](#string)
+  * [Query](#query)
+  * [Objects](#objects)
+    * [ResultSet](#resultset)
+    * [SearchResult](#searchresult)
+  * [Enums](#enums)
+    * [MediaSourceType](#mediasourcetype)
+    * [MediaType](#mediatype)
+  * [Scalars](#scalars)
+    * [Boolean](#boolean)
+    * [Int](#int)
+    * [String](#string)
 
 </details>
 
 ## Query (Queries)
-
-This API uses a fuzzy algorithm to sort the results by score with respect to the searched criteria
+This API uses a fuzzy algorithm to sort the results by score with respect to the searched criteria 
 
 <table>
 <thead>
@@ -36,7 +37,7 @@ This API uses a fuzzy algorithm to sort the results by score with respect to the
 <td valign="top"><a href="#searchresult">SearchResult</a></td>
 <td>
 
-This query allows you to search for songs and movies in iTunes, shows on TVMaze and people in CRC Industries
+This query allows you to search for songs and movies in iTunes, shows on TVMaze and people in CRC Industries 
 
 </td>
 </tr>
@@ -90,6 +91,15 @@ The source of the song, movie, show or persona found
 <td>
 
 Represents the type of data found
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>url</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+More info about item found
 
 </td>
 </tr>
@@ -239,8 +249,10 @@ The `Boolean` scalar type represents `true` or `false`.
 
 ### Int
 
-The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. 
 
 ### String
 
 The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+
+Done in 0.20s.

@@ -16,7 +16,8 @@ export class TVMazeRepository {
                     return {
                         name: data.show.name,
                         source: MediaSourceType.TVMaze,
-                        type
+                        type,
+                        url: data.show.url
                     };
                 });
             }

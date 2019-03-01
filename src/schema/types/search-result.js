@@ -48,9 +48,14 @@ const ResultSet = new GraphQLObjectType({
         type: {
             type: new GraphQLNonNull(MediaType),
             description: "Represents the type of data found"
+        },
+        url: {
+            type: new GraphQLNonNull(GraphQLString),
+            description: "More info about item found"
         }
     }
 });
+
 export default new GraphQLObjectType({
     name: "SearchResult",
     fields: {
