@@ -19,7 +19,7 @@ cd mnc
 
 ```
 chmod a+x ./bin/install-docker-ubuntu-18.04.sh
-sudo sh ./bin/install-docker-ubuntu-18.04.sh
+sudo bash ./bin/install-docker-ubuntu-18.04.sh
 ```
 
 For any other Linux based distro you can refer to this link to know how to install Docker.
